@@ -46,7 +46,9 @@ const Calculator = () => {
       case '/':
         if(num1 == 0 || num2 == 0){
             setErrorMessage('Cannot perform / with 0')
+            setSuccess("")
             resultValue = ""
+            return
         }
         else{
         resultValue = parseFloat(num1) / parseFloat(num2);
