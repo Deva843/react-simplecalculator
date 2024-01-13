@@ -28,6 +28,7 @@ const Calculator = () => {
     if (!num1 || !num2 || !operator) {
       setErrorMessage('Please fill in both number fields and select an operator');
       setResult('');
+      setSuccess("");
       return;
     }
 
@@ -45,9 +46,10 @@ const Calculator = () => {
         break;
       case '/':
         if(num1 == 0 || num2 == 0){
-            setErrorMessage('Cannot perform / with 0')
+            setErrorMessage('Cannot perform Division opertion with 0')
             setSuccess("")
-            resultValue = ""
+            resultValue ="";
+            setResult(resultValue);
             return
         }
         else{
@@ -79,11 +81,11 @@ const Calculator = () => {
 
         {
         (errorMessage && <div style={{ color: 'red' }}> <h1>error!</h1>
-            <p>{errorMessage}</p></div>) }
+            <strong>{errorMessage}</strong></div>) }
 
       <div>
-        {success && <h1 style = {{color:'green'}}>SUCCESS!</h1>}
-        <span>{result}</span>
+        {success && <h1 style = {{color:'green'}}>SUCCESS ..!</h1>}
+        <strong>{result}</strong>
       </div>
     </div>
     </div>
